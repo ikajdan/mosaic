@@ -2,6 +2,14 @@
 
 A start-page for self-hosted services and bookmarks.
 
+<br>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/60dace86-2e3b-44c2-a85b-b9573f622fb5" width="800" height="auto"/>
+  <br>
+  <em>Demo of the website.</em>
+</div>
+<br>
+
 ## Deploy
 
 To run it as a docker service, execute: `docker compose up`.
