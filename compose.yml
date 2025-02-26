@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  mosaic:
+    container_name: mosaic
+    build: .
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - config:/config
+
+volumes:
+  config:

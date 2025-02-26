@@ -1,0 +1,159 @@
+@font-face {
+    font-family: Nordica;
+    src: url("fonts/Nordica-Hairline.otf");
+}
+
+@font-face {
+    font-family: Emphasis;
+    src: url("fonts/LTEmphasis-Regular.otf");
+}
+
+:root {
+    --fg: #eff0f1;
+    --bg: #232629;
+    --border: rgba(0, 0, 0, 0.5);
+    --panel-bg: rgba(0, 0, 0, 0.35);
+    --panel-bg-hover: rgba(0, 0, 0, 0.6);
+}
+
+body {
+    color: var(--fg);
+    font-family: Emphasis;
+    margin: 8rem 8rem 0 8rem;
+    background: var(--bg) url("data/backgrounds/desktop.jpg") no-repeat fixed center;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 2.3rem;
+    font-family: Nordica;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px black;
+    margin: 12px 10px 0 -5px;
+}
+
+a {
+    color: var(--fg);
+    text-decoration: none;
+    outline: none;
+}
+
+#toggle-button {
+    display: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    margin: 3rem 0 4rem 0;
+}
+
+.grid-item {
+    font-size: 1.3rem;
+    padding: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.8s ease;
+}
+
+.grid-item:hover {
+    background-color: var(--panel-bg-hover);
+}
+
+.grid-item img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.grid-item, .grid-list, #toggle-button {
+    white-space: nowrap;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--panel-bg);
+    backdrop-filter: blur(13px);
+}
+
+.hidden {
+    display: none;
+}
+
+.grid-list h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.4rem;
+    margin: 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.grid-list ul {
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 0.8rem 0 0.4rem 1.1rem;
+    margin: 0;
+}
+
+.grid-list li {
+    list-style-type: none;
+    margin-bottom: 0.4rem;
+}
+
+.grid-list a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile version tweaks */
+@media only screen and (max-width: 1080px) and (orientation: portrait) {
+    html {
+        font-size: 20px;
+    }
+
+    body {
+        margin: 4rem 2rem 4rem 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    #title {
+        border-bottom: 1px solid var(--fg);
+    }
+
+    #toggle-button {
+        width: 2.5rem;
+        height: 2.5rem;
+        position: fixed;
+        bottom: -2.7rem;
+        right: 1rem;
+        border-radius: 50%;
+        background: var(--border) url("images/show.svg") no-repeat center;
+        background-size: 1rem;
+        transition: bottom 0.3s;
+        outline: none;
+        cursor: pointer;
+        display: block;
+        z-index: 1;
+    }
+
+    .grid-item {
+        padding: 1.3rem;
+    }
+
+    .grid-list h2 {
+        padding: 0.6rem;
+    }
+
+    .grid-list li {
+        margin-bottom: 0.5rem;
+    }
+
+    .grid-container {
+        margin: 4rem 0 4rem 0;
+    }
+}
